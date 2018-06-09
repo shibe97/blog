@@ -1,6 +1,6 @@
 import React from 'react'
 import { navigateTo } from 'gatsby-link'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 import img from '../img/shibe97.png';
 

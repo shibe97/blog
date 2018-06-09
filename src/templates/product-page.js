@@ -70,6 +70,7 @@ export const productPageQuery = graphql`
         intro {
           blurbs {
             image
+            title
             text
           }
           heading
