@@ -42,6 +42,9 @@ const Navbar = () => (
     <Item onClick={() => navigateTo('/about')}>
       About
     </Item>
+    <Item onClick={() => navigateTo('/products')}>
+      Products
+    </Item>
   </Nav>
 )
 
