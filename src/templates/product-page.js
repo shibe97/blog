@@ -71,6 +71,7 @@ export const productPageQuery = graphql`
           blurbs {
             image
             title
+            link
             text
           }
           heading

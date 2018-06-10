@@ -8,8 +8,7 @@ const Title = styled.p`
 `;
 
 const Img = styled.img`
-  max-height: 200px;
-  max-width: 200px;
+  height: 200px;
 `;
 
 const FeatureGrid = ({ gridItems }) => (
@@ -18,7 +17,7 @@ const FeatureGrid = ({ gridItems }) => (
       <div key={item.image} className="column is-6">
         <section className="section">
           <p className="has-text-centered">
-            <Img alt="" src={item.image} />
+            <a href={item.link}><Img alt="" src={item.image} /></a>
           </p>
           <Title>{item.title}</Title>
           <p>{item.text}</p>
@@ -34,6 +33,7 @@ FeatureGrid.propTypes = {
       image: PropTypes.string,
       title: PropTypes.string,
       text: PropTypes.string,
+      link: PropTypes.string,
     })
   ),
 }
