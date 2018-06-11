@@ -55,9 +55,9 @@ export const BlogPostTemplate = ({
             <PostContent content={content} />
             <div>
               <SNS>
-                <List><Btn href=""><Icon src={twImg} alt="" /></Btn></List>
-                <List><Btn href=""><Icon src={fbImg} alt="" /></Btn></List>
-                <List><Btn href=""><Icon src={hatenaImg} alt="" /></Btn></List>
+                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${location.href}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
+                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${location.href}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
+                <List><Btn href={`https://b.hatena.ne.jp/entry/${location.href}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
               </SNS>
             </div>
             {tags && tags.length ? (
