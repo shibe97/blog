@@ -60,6 +60,7 @@ const Meta = ({ post }) => (
       { property: 'og:title', content: post.title },
       { property: 'og:type', content: 'blog' },
       { property: 'og:description', content: post.frontmatter.description },
+      { property: 'og:image', content: `${location.origin}${post.frontmatter.image}` },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:site', content: '@shibe97' },
     ]}
@@ -99,6 +100,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        image
         tags
       }
     }
