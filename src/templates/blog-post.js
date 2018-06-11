@@ -50,18 +50,32 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
 }
+
+const Meta = ({ post }) => (
+  <Helmet
+    title={`${post.frontmatter.title} | Blog`}
+  	meta={[
+      { name: 'description', content: post.frontmatter.description },
+      { property: 'og:title', content: post.title },
+      { property: 'og:type', content: 'blog' },
+      { property: 'og:description', content: post.frontmatter.description },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@shibe97' },
+    ]}
+  />
+);
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
+  console.log(post);
 
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+      helmet={<Meta post={post} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
     />
