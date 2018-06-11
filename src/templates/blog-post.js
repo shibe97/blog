@@ -58,11 +58,8 @@ const Meta = ({ post }) => (
   	meta={[
       { name: 'description', content: post.frontmatter.description },
       { property: 'og:title', content: post.title },
-      { property: 'og:type', content: 'blog' },
       { property: 'og:description', content: post.frontmatter.description },
       { property: 'og:image', content: `${location.origin}${post.frontmatter.image}` },
-      { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:site', content: '@shibe97' },
     ]}
   />
 );
