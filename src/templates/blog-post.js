@@ -3,7 +3,34 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 import Content, { HTMLContent } from '../components/Content'
+
+import twImg from '../img/ic_tw_144.png';
+import fbImg from '../img/ic_fb_144.png';
+import hatenaImg from '../img/ic_hatena_144.png';
+
+const Btn = styled.a`
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+const Icon = styled.img`
+  height: 20px;
+  margin-right: 10px;
+`;
+
+const SNS = styled.ul`
+  display: flex;
+  align-items: flex-end;
+  margin: 40px 0 0 !important;
+`;
+
+const List = styled.li`
+  list-style: none;
+  margin-right: 10px;
+`;
 
 export const BlogPostTemplate = ({
   content,
@@ -26,6 +53,13 @@ export const BlogPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
+            <div>
+              <SNS>
+                <List><Btn href=""><Icon src={twImg} alt="" /></Btn></List>
+                <List><Btn href=""><Icon src={fbImg} alt="" /></Btn></List>
+                <List><Btn href=""><Icon src={hatenaImg} alt="" /></Btn></List>
+              </SNS>
+            </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
