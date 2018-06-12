@@ -41,7 +41,7 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  const url = location.href;
+  const locationGlobal = typeof location !== 'undefined' && location;
 
   return (
     <section className="section">
@@ -56,9 +56,9 @@ export const BlogPostTemplate = ({
             <PostContent content={content} />
             <div>
               <SNS>
-                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
-                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
-                <List><Btn href={`https://b.hatena.ne.jp/entry/${url}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
+                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${location.href}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
+                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${location.href}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
+                <List><Btn href={`https://b.hatena.ne.jp/entry/${location.href}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
               </SNS>
             </div>
             {tags && tags.length ? (
