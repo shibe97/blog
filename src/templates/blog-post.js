@@ -87,17 +87,21 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
 }
 
-const Meta = ({ post }) => (
-  <Helmet
-    title={`${post.frontmatter.title} | Blog`}
-  	meta={[
-      { name: 'description', content: post.frontmatter.description },
-      { property: 'og:title', content: post.title },
-      { property: 'og:description', content: post.frontmatter.description },
-      { property: 'og:image', content: `${location.origin}${post.frontmatter.image}` },
-    ]}
-  />
-);
+const Meta = ({ post }) => {
+  const locationGlobal = typeof location !== 'undefined' && location;
+
+  return (
+    <Helmet
+      title={`${post.frontmatter.title} | Blog`}
+      meta={[
+        { name: 'description', content: post.frontmatter.description },
+        { property: 'og:title', content: post.title },
+        { property: 'og:description', content: post.frontmatter.description },
+        { property: 'og:image', content: `${locationGlobal.origin}${post.frontmatter.image}` },
+      ]}
+    />
+  );
+};
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
