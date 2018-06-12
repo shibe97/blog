@@ -40,7 +40,8 @@ export const BlogPostTemplate = ({
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
+  const url = location.href;
 
   return (
     <section className="section">
@@ -55,9 +56,9 @@ export const BlogPostTemplate = ({
             <PostContent content={content} />
             <div>
               <SNS>
-                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${window.location.href}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
-                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
-                <List><Btn href={`https://b.hatena.ne.jp/entry/${window.location.href}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
+                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
+                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
+                <List><Btn href={`https://b.hatena.ne.jp/entry/${url}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
               </SNS>
             </div>
             {tags && tags.length ? (
