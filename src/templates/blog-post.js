@@ -10,38 +10,43 @@ import twImg from '../img/ic_tw_144.png';
 import fbImg from '../img/ic_fb_144.png';
 import hatenaImg from '../img/ic_hatena_144.png';
 
-const Btn = styled.a`
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const Icon = styled.img`
-  height: 20px;
-  margin-right: 10px;
-`;
-
-const SNS = styled.ul`
-  display: flex;
-  align-items: flex-end;
-  margin: 40px 0 0 !important;
-`;
-
-const List = styled.li`
-  list-style: none;
-  margin-right: 10px;
-`;
-
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
   tags,
   title,
+  image,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
   const locationGlobal = typeof location !== 'undefined' && location;
+
+  const EyeCatch = styled.img`
+    margin: 20px 0 40px;
+  `;
+
+  const Btn = styled.a`
+    &:hover {
+      opacity: 0.8;
+    }
+  `;
+
+  const Icon = styled.img`
+    height: 20px;
+    margin-right: 10px;
+  `;
+
+  const SNS = styled.ul`
+    display: flex;
+    align-items: flex-end;
+    margin: 40px 0 0 !important;
+  `;
+
+  const List = styled.li`
+    list-style: none;
+    margin-right: 10px;
+  `;
 
   return (
     <section className="section">
@@ -53,6 +58,7 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
+            <EyeCatch src={image} alt="" />
             <PostContent content={content} />
             <div>
               <SNS>
@@ -114,6 +120,7 @@ const BlogPost = ({ data }) => {
       helmet={<Meta post={post} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
+      image={post.frontmatter.image}
     />
   )
 }
