@@ -20,7 +20,7 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  const locationGlobal = typeof location !== 'undefined' && location;
+  const url = `https://shibe97.com${location.pathname}`;
 
   const EyeCatch = styled.img`
     margin: 20px 0 40px;
@@ -62,9 +62,9 @@ export const BlogPostTemplate = ({
             <PostContent content={content} />
             <div>
               <SNS>
-                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${locationGlobal.href}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
-                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${locationGlobal.href}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
-                <List><Btn href={`https://b.hatena.ne.jp/entry/${locationGlobal.href}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
+                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
+                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
+                <List><Btn href={`https://b.hatena.ne.jp/entry/${url}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
               </SNS>
             </div>
             {tags && tags.length ? (
@@ -95,6 +95,7 @@ BlogPostTemplate.propTypes = {
 
 const Meta = ({ post }) => {
   const locationGlobal = typeof location !== 'undefined' && location;
+  const origin = 'https://shibe97.com';
 
   return (
     <Helmet
@@ -103,7 +104,7 @@ const Meta = ({ post }) => {
         { name: 'description', content: post.frontmatter.description },
         { property: 'og:title', content: post.title },
         { property: 'og:description', content: post.frontmatter.description },
-        { property: 'og:image', content: `${locationGlobal.origin}${post.frontmatter.image}` },
+        { property: 'og:image', content: `${origin}${post.frontmatter.image}` },
       ]}
     />
   );
