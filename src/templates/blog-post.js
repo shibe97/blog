@@ -17,10 +17,11 @@ export const BlogPostTemplate = ({
   tags,
   title,
   image,
+  pathname,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  const url = `https://shibe97.com${location.pathname}`;
+  const url = `https://shibe97.com${pathname}`;
 
   const EyeCatch = styled.img`
     margin: 20px 0 40px;
@@ -94,7 +95,6 @@ BlogPostTemplate.propTypes = {
 }
 
 const Meta = ({ post }) => {
-  const locationGlobal = typeof location !== 'undefined' && location;
   const origin = 'https://shibe97.com';
 
   return (
@@ -110,7 +110,7 @@ const Meta = ({ post }) => {
   );
 };
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
 
   return (
@@ -122,6 +122,7 @@ const BlogPost = ({ data }) => {
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       image={post.frontmatter.image}
+      pathname={location.pathname}
     />
   )
 }
