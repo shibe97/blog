@@ -7,6 +7,16 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-18027176-6',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/admin/**'],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
