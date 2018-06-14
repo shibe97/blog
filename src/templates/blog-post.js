@@ -102,7 +102,7 @@ const Meta = ({ post }) => {
       title={`${post.frontmatter.title} | Blog`}
       meta={[
         { name: 'description', content: post.frontmatter.description },
-        { property: 'og:title', content: post.title },
+        { property: 'og:title', content: post.frontmatter.title },
         { property: 'og:description', content: post.frontmatter.description },
         { property: 'og:image', content: `${origin}${post.frontmatter.image}` },
       ]}
