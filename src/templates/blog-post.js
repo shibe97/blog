@@ -17,36 +17,12 @@ export const BlogPostTemplate = ({
   tags,
   title,
   image,
-  pathname,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  const url = `https://shibe97.com${pathname}`;
 
   const EyeCatch = styled.img`
     margin: 20px 0 40px;
-  `;
-
-  const Btn = styled.a`
-    &:hover {
-      opacity: 0.8;
-    }
-  `;
-
-  const Icon = styled.img`
-    height: 20px;
-    margin-right: 10px;
-  `;
-
-  const SNS = styled.ul`
-    display: flex;
-    align-items: flex-end;
-    margin: 40px 0 0 !important;
-  `;
-
-  const List = styled.li`
-    list-style: none;
-    margin-right: 10px;
   `;
 
   return (
@@ -61,25 +37,6 @@ export const BlogPostTemplate = ({
             <p>{description}</p>
             <EyeCatch src={image} alt="" />
             <PostContent content={content} />
-            <div>
-              <SNS>
-                <List><Btn href={`https://twitter.com/intent/tweet?text=${title}&url=${url}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
-                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
-                <List><Btn href={`https://b.hatena.ne.jp/entry/${url}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
-              </SNS>
-            </div>
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -112,18 +69,73 @@ const Meta = ({ post }) => {
 
 const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
+  const url = `https://shibe97.com${location.pathname}`;
+
+  const SNS = styled.ul`
+    display: flex;
+    align-items: flex-end;
+    margin: 40px 0 0 !important;
+  `;
+
+  const List = styled.li`
+    list-style: none;
+    margin-right: 10px;
+  `;
+
+  const Btn = styled.a`
+    &:hover {
+      opacity: 0.8;
+    }
+  `;
+
+  const Icon = styled.img`
+    height: 20px;
+    margin-right: 10px;
+  `;
+
+  const Wrapper = styled.div`
+    margin: 0 1.5rem;
+  `;
+
+  const tags = post.frontmatter.tags;
 
   return (
-    <BlogPostTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      description={post.frontmatter.description}
-      helmet={<Meta post={post} />}
-      tags={post.frontmatter.tags}
-      title={post.frontmatter.title}
-      image={post.frontmatter.image}
-      pathname={location.pathname}
-    />
+    <div>
+      <BlogPostTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        helmet={<Meta post={post} />}
+        tags={post.frontmatter.tags}
+        title={post.frontmatter.title}
+        image={post.frontmatter.image}
+      />
+      <Wrapper>
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <SNS>
+                <List><Btn href={`https://twitter.com/intent/tweet?text=${post.frontmatter.title}&url=${url}`} target="twitter"><Icon src={twImg} alt="Twitterでシェア" /></Btn></List>
+                <List><Btn href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="facebook"><Icon src={fbImg} alt="Facebookでシェア" /></Btn></List>
+                <List><Btn href={`https://b.hatena.ne.jp/entry/${url}`} target="hatena"><Icon src={hatenaImg} alt="はてなブックマークでシェア" /></Btn></List>
+              </SNS>
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map(tag => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+    </div>
   )
 }
 
