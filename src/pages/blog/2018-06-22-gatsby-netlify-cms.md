@@ -181,6 +181,8 @@ image: /img/ogp.png
 
 Gatsbyでは内部的には`react-helmet`を用いているので、コンポーネント単位でHTMLヘッダーの上書きを行うことができます。
 
+今回は次のようなHelmetコンポーネントのラッパーを作成し、BlogPostTemplateの`helmet`propsに渡すようにしました。
+
 ```javascript
 const Meta = ({ post }) => {
   const origin = 'https://shibe97.com';
@@ -198,3 +200,11 @@ const Meta = ({ post }) => {
   );
 };
 ```
+
+## ステップ3
+
+ここまででOGP画像は表示できるようになったはずです。
+
+ついでにブログ記事の先頭にもその画像を表示できるようにします。
+
+`BlogPostTemplate`コンポーネント内の好きな位置にImgタグで`post.frontmatter.images`を表示させればOKです。
