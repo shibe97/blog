@@ -208,3 +208,7 @@ const Meta = ({ post }) => {
 ついでにブログ記事の先頭にもその画像を表示できるようにします。
 
 `BlogPostTemplate`コンポーネント内の好きな位置にImgタグで`post.frontmatter.images`を表示させればOKです。
+
+こんな感じで管理画面から設定できるようになります。
+
+![](/img/ss-netlify-cms-admin.png)
