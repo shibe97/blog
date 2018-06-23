@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Gatsby + Netlify CMSでブログを作る
 date: '2018-06-22T23:53:22+09:00'
 description: ふと触ってみたNetlify CMSに感動しすぎてブログを書きました。
-image: /img/chemex.jpg
+image: /img/gastby-netlify.png
 permalink: gatsby-netlify-cms
 tags:
   - Gatsby
