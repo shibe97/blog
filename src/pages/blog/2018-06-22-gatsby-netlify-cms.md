@@ -2,14 +2,14 @@
 templateKey: blog-post
 title: Gatsby + Netlify CMSでブログを作る
 date: '2018-06-22T23:53:22+09:00'
-description: aaa
+description: ふと触ってみたNetlify CMSに感動しすぎてブログを書きました。
 image: /img/chemex.jpg
 permalink: gatsby-netlify-cms
 tags:
   - Gatsby
   - Netlify
 ---
-かれこれ色んなブログサービスを転々としてきましたが、最近になってGatsby + Netlifyという単語をよく聞くようになったので試してみました。
+かれこれ、WordPress→Tumblr→はてなブログという感じで色んなブログサービスを転々としてきましたが、最近になってGatsby + Netlifyという単語をよく聞くようになったので試してみました。
 
 # Gatsby
 
@@ -64,7 +64,7 @@ Netlifyではそのあたりの処理を全部やってくれて、かつ以下�
 
 # 実践！Gatsby + Netlify CMS
 
-恐ろしいほど簡単にサイトを作成できます。
+starterkitを使うと恐ろしいほど簡単にサイトを作成できます。
 
 ## ステップ１
 
