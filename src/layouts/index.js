@@ -13,6 +13,7 @@ const TemplateWrapper = ({ children }) => (
         { property: 'og:type', content: 'blog' },
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:site', content: '@shibe97' },
+        { name: 'google-site-verification', content: '1tpQy_enmV1XBl81DJ3CtVefOwQ_lcj25GEp5UkULUE' },
       ]}
       link={[
         { rel: 'shortcut icon', href: '/img/favicon.png' }
