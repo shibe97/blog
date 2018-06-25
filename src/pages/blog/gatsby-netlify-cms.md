@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-title: Gatsby + Netlify CMSでブログを作る
-date: '2018-06-22T23:53:22+09:00'
+title: Gatsby + Netlify CMSで作ったブログをカスタマイズする
+date: '2018-06-24T22:32:01+09:00'
 description: ふと触ってみたNetlify CMSに感動しすぎてブログを書きました。
 image: /img/gastby-netlify.png
 permalink: gatsby-netlify-cms
@@ -115,11 +115,11 @@ GitHubと連携する。ボタンをポチッ。
 
 ## src/layouts
 
-スタイル用のall.sassと大元のテンプレートとなるindex.jsがあります。
+スタイル用の`all.sass`と大元のテンプレートとなる`index.js`があります。
 
-最初、CSSは一体どこに書かれているのだろうと探しましたが、all.sass内で読み込んでいるBulmaというCSSテンプレートを使っているようです。
+最初、CSSは一体どこに書かれているのだろうと探しましたが、`all.sass`内で読み込んでいるBulmaというCSSテンプレートを使っているようです。
 
-新たにスタイルを書きたい場合はall.sassに付け加えても良いですしStyled-Components等を使うのもアリです。
+新たにスタイルを書きたい場合は`all.sass`に付け加えても良いですしStyled-Components等を使うのもアリです。
 
 ## src/components
 
@@ -161,7 +161,7 @@ Blogのfieldsに次の一文を追加します。
 
 ここを変更すると、既にブログの記事が存在している場合、それらにImageが設定されていないとビルド時にエラーが出てしまいます。
 
-記事がある場合はsrc/pages/blog以下のMarkdownファイルの先頭部分にImageの設定が必要です。（指定するファイルはとりあえず適当で良いと思います）
+記事がある場合は`src/pages/blog`以下のMarkdownファイルの先頭部分にImageの設定が必要です。（指定するファイルはとりあえず適当で良いと思います）
 
 こんな感じです。
 
@@ -230,7 +230,7 @@ publish_mode: editorial_workflow
 Workflow内はカンバン形式になっており、Drafts / In Review / Readyの3段階に分けて記事を管理することができます。\
 レビュー機能があるので、複数人での管理にも向いていますね。
 
-![](/img/ss-editorial-workflow.png)
+![null](/img/ss-editorial-workflow.png)
 
 なぜこんな素晴らしい機能がデフォルトでOFFになっているのか謎です。
 
