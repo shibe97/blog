@@ -81,13 +81,13 @@ $ npm start
 
 <br>
 
-![](/img/react-uport-img_01.png)
+![null](/img/react-uport-img_01.png)
 
 右上のリンクを押下すると、次のようなモーダルが出てきます。
 
 <br>
 
-![](/img/react-uport-img_02.png)
+![null](/img/react-uport-img_02.png)
 
 \
 ここにあるように、ログインするにはuPortのアプリをダウンロードする必要があります。\
@@ -129,7 +129,7 @@ uport.requestCredentials({requested: ['name', 'phone', 'country', 'email']}).the
 
 <br>
 
-![](/img/react-uport-img_03.png)
+![null](/img/react-uport-img_03.png)
 
 <br>
 
