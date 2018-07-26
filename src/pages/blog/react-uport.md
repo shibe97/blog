@@ -3,7 +3,7 @@ templateKey: blog-post
 title: react-uportでブロックチェーンによるログイン機能を実装する
 date: '2018-07-26T10:43:16+09:00'
 description: uPortというブロックチェーンを用いたログイン機構があることを知り、触ってみました。
-image: /img/react-uport-img_00.jpg
+image: /img/react-uport-img_00.png
 permalink: react-uport
 tags:
   - ブロックチェーン
@@ -81,13 +81,13 @@ $ npm start
 
 <br>
 
-![](/img/react-uport-img_01.png)
+![null](/img/react-uport-img_01.png)
 
 右上のリンクを押下すると、次のようなモーダルが出てきます。
 
 <br>
 
-![](/img/react-uport-img_02.png)
+![null](/img/react-uport-img_02.png)
 
 \
 ここにあるように、ログインするにはuPortのアプリをダウンロードする必要があります。\
@@ -129,7 +129,7 @@ uport.requestCredentials({requested: ['name', 'phone', 'country', 'email']}).the
 
 <br>
 
-![](/img/react-uport-img_03.png)
+![null](/img/react-uport-img_03.png)
 
 <br>
 
