@@ -3,7 +3,7 @@ templateKey: blog-post
 title: react-uportでブロックチェーンによるログイン機能を実装する
 date: '2018-07-26T10:43:16+09:00'
 description: uPortというブロックチェーンを用いたログイン機構があることを知り、触ってみました。
-image: /img/react-uport-img_00.jpg
+image: /img/react-uport-img_00.png
 permalink: react-uport
 tags:
   - ブロックチェーン
