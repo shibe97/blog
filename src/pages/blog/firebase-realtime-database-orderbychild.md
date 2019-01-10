@@ -3,7 +3,7 @@ templateKey: blog-post
 title: FirebaseのRealtime DatabaseでorderByChildが効かない
 date: '2019-01-10T19:39:50+09:00'
 description: JavaScriptのオブジェクトの話。
-image: /img/products-grid2.jpg
+image: ''
 permalink: firebase-realtime-database-orderbychild
 tags:
   - Firebase
