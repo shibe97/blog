@@ -29,3 +29,4 @@ firebase.database().ref(path).orderByChild('updateDate').once('value').then((sna
   console.log(array);
 });
 ```
+配列であれば順序が保証されるため、問題ない。
