@@ -34,7 +34,6 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
             <EyeCatch src={image} alt="" />
             <PostContent content={content} />
           </div>
@@ -53,16 +52,21 @@ BlogPostTemplate.propTypes = {
 
 const Meta = ({ post }) => {
   const origin = 'https://shibe97.com';
+  let meta = [
+    { name: 'description', content: post.frontmatter.description },
+    { property: 'og:title', content: post.frontmatter.title },
+    { property: 'og:description', content: post.frontmatter.description },
+  ];
+  if (post.frontmatter.image) {
+    meta.push(
+      { property: 'og:image', content: `${origin}${post.frontmatter.image}` }
+    );
+  }
 
   return (
     <Helmet
       title={`${post.frontmatter.title} | Blog`}
-      meta={[
-        { name: 'description', content: post.frontmatter.description },
-        { property: 'og:title', content: post.frontmatter.title },
-        { property: 'og:description', content: post.frontmatter.description },
-        { property: 'og:image', content: `${origin}${post.frontmatter.image}` },
-      ]}
+      meta={meta}
     />
   );
 };
